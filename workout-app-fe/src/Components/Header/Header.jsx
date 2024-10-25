@@ -1,9 +1,9 @@
 import NavBar from "./NavBar.jsx"
 
-const Header = () =>{
+const Header = ({user}) =>{
     return (
         <header>
-            <NavBar/>
+            <NavBar user={user}/>
         </header>
     )
 }

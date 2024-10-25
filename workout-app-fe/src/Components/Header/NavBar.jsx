@@ -11,14 +11,13 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import Avatar from '@mui/material/Avatar'
 
-const NavBar = ()=> {
-  const [auth, setAuth] = useState(true);
+const NavBar = ({user})=> {
+  console.log(user)
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -30,19 +29,8 @@ const NavBar = ()=> {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <FormGroup>
-        <FormControlLabel
-          control={
-            <Switch
-              checked={auth}
-              onChange={handleChange}
-              aria-label="login switch"
-            />
-          }
-          label={auth ? 'Logout' : 'Login'}
-        />
-      </FormGroup>
-      <AppBar position="static">
+      
+      <AppBar position="static" sx ={{backgroundColor: '#29293d'}}>
         <Toolbar>
           <IconButton
             size="large"
@@ -54,9 +42,9 @@ const NavBar = ()=> {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Photos
+            {user.username}
           </Typography>
-          {auth && (
+          
             <div>
               <IconButton
                 size="large"
@@ -66,7 +54,7 @@ const NavBar = ()=> {
                 onClick={handleMenu}
                 color="inherit"
               >
-                <AccountCircle />
+                <Avatar src={user.avatar}/>
               </IconButton>
               <Menu
                 id="menu-appbar"
@@ -87,7 +75,7 @@ const NavBar = ()=> {
                 <MenuItem onClick={handleClose}>My account</MenuItem>
               </Menu>
             </div>
-          )}
+          
         </Toolbar>
       </AppBar>
     </Box>
