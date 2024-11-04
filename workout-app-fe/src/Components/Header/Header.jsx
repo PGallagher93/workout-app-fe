@@ -2,7 +2,7 @@ import NavBar from "./NavBar.jsx"
 
 const Header = ({user}) =>{
     return (
-        <header>
+        <header className="h-14 bg-black flex" >
             <NavBar user={user}/>
         </header>
     )
