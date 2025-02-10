@@ -1,8 +1,12 @@
+
+
 const Homepage = () =>{
 return (
-    <div className="pt-14">
-       <p>testing</p>
-    </div>
+      
+       <div>
+        <h1>HELLO</h1>
+       </div>
+    
 )
 }
 
