@@ -7,7 +7,7 @@ import { UserContext } from './contexts/userContext.js'
 import { Route, Routes } from 'react-router-dom'
 import Homepage from './Pages/Homepage.jsx'
 function App() {
- 
+  const [isLoading, setIsLoading] = useState(false)
   const [user, setUser] = useState({username:"Sigismund", userId: 1, avatar: SpaceWolvesAvatar })
   
   
