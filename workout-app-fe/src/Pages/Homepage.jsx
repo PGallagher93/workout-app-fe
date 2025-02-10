@@ -1,6 +1,8 @@
 const Homepage = () =>{
 return (
-    <p>testing</p>
+    <div className="pt-14">
+       <p>testing</p>
+    </div>
 )
 }
 
