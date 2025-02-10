@@ -5,7 +5,7 @@ const NavBar = ({ user }) => {
   console.log(user);
 
   return (
-    <nav className="flex justify-around w-full p-2">
+    <nav className="flex justify-start w-full p-2">
       <button></button>
 
       <img
@@ -14,7 +14,7 @@ const NavBar = ({ user }) => {
         alt="Rounded avatar"
       ></img>
 
-      <h1 className="text-orange-400"> {user.username}</h1>
+      <h1 className="text-orange-400 pl-[5vw] pt-[1vh]"> {user.username}</h1>
     </nav>
   );
 };
