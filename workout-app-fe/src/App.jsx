@@ -5,6 +5,7 @@ import SpaceWolvesAvatar from "./Avatars/SpaceWolves.jpeg"
 import {useContext} from 'react'
 import { UserContext } from './contexts/userContext.js'
 import { Route, Routes } from 'react-router-dom'
+import Homepage from './Pages/Homepage.jsx'
 function App() {
  
   const [user, setUser] = useState({username:"Sigismund", userId: 1, avatar: SpaceWolvesAvatar })
@@ -15,7 +16,7 @@ function App() {
 
       <Header/>
       <Routes>
-        <Route path="/" element={}></Route>
+        <Route path="/" element={<Homepage/>}></Route>
       </Routes>
   
     </UserContext.Provider>
