@@ -3,8 +3,8 @@
 const Homepage = () =>{
 return (
       
-       <div>
-        <h1>HELLO</h1>
+       <div className="pt-14 bg-zinc-800 h-screen">
+        
        </div>
     
 )
