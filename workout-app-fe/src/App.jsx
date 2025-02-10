@@ -7,11 +7,14 @@ import { UserContext } from './contexts/userContext.js'
 function App() {
  
   const [user, setUser] = useState({username:"Sigismund", userId: 1, avatar: SpaceWolvesAvatar })
-  return (
-    <>
-      <Header user = {user}/>
   
-    </>
+  
+  return (
+    <UserContext.Provider value ={user}>
+      
+      <Header/>
+  
+    </UserContext.Provider>
   )
 }
 

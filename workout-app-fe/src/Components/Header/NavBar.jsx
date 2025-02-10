@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-
-const NavBar = ({ user }) => {
+import {useContext} from 'react'
+import { UserContext } from "../../contexts/userContext";
+const NavBar = () => {
+   const user = useContext(UserContext)
   console.log(user);
 
   return (
