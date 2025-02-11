@@ -10,7 +10,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState({})
   const [user, setUser] = useState({username:"Sigismund", userId: 1, avatar: SpaceWolvesAvatar, currentWorkout: null })
-  
+  const [workouts, setWorkouts] = useState({})
   
   return (
     <UserContext.Provider value ={user}>
