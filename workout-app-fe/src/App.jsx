@@ -19,21 +19,21 @@ function App() {
       .then((res) => {
         setIsLoading(false)
         setErrorMessage({})
-        console.log(res.data, "< res.data")
+        setWorkouts(res.data.workouts)
       })
       .catch((err) => {
-        setErrorMessage(err.response.data)
-        console.log(err.resonse.data, "< error")
+        setErrorMessage(err)
+        console.log(err, "< error")
       })
   }, [])
-
+ console.log(workouts)
   
   return (
     <UserContext.Provider value ={user}>
 
       <Header/>
       <Routes>
-        <Route path="/" element={<Homepage/>}></Route>
+        <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
       </Routes>
   
     </UserContext.Provider>

@@ -1,9 +1,10 @@
 import ContainerTile from "../Components/ContainerTile"
 import { UserContext } from "../contexts/userContext"
 import { useContext } from "react"
-const Homepage = () =>{
+import { Link } from "react-router-dom"
+const Homepage = (workouts) =>{
        const user = useContext(UserContext)
-       
+       console.log(workouts, " workout in home")
 return (
       
        <div className="pt-14 bg-zinc-800 h-screen">
