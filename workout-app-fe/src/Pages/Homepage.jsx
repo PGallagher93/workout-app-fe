@@ -8,7 +8,7 @@ const Homepage = (workouts) =>{
 return (
       
        <div className="pt-14 bg-zinc-800 h-screen">
-        <div className=" p-10 grid grid-cols-2 gap-4">
+        <div className=" p-10 flex-col justify-between">
         <Link to={user.currentWorkout ? "/CurrentWorkout" :"/MyWorkouts"}>
         <ContainerTile title={ user.currentWorkout ? "Current Workout" : "Add Current Workout"}/>
         </Link>
