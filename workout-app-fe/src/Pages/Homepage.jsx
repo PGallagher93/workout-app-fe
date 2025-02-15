@@ -10,7 +10,9 @@ return (
        <div className="pt-14 bg-zinc-800 h-screen">
         <div className=" p-10 grid grid-cols-2 gap-4">
         <ContainerTile title={ user.currentWorkout ? "Current Workout" : "Add Current Workout"}/>
+        <Link to={"/MyWorkouts"}>
         <ContainerTile title="My Workouts" />
+        </Link>
         <ContainerTile title ="My Records"/>
         <ContainerTile title ="Create Workout"/>
         </div>
