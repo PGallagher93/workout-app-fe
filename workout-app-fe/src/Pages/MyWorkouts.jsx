@@ -1,10 +1,16 @@
+import ContainerTile from "../Components/ContainerTile"
 
-const MyWorkouts = (workouts) =>{
+const MyWorkouts = ({workouts}) =>{
 
     console.log(workouts, "In myworkout page")
     return(
         <div className="pt-14 bg-zinc-800 h-screen">
-            <p>workouts</p>
+            <h1>workouts</h1>
+            <ul className="flex-col ">
+                {workouts.map((workout) => {
+                    return <ContainerTile key = {workout.workout_id} title = {workout.workout_name}/>
+                })}
+            </ul>
         </div>
     )
 }

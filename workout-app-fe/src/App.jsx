@@ -27,7 +27,7 @@ function App() {
         console.log(err, "< error")
       })
   }, [])
- console.log(workouts)
+ console.log(workouts, "in app")
   
   return (
     <UserContext.Provider value ={user}>
