@@ -1,7 +1,8 @@
-const ContainerTile = () => {
+const ContainerTile = (title) => {
+    
     return (
         <div className="bg-orange-400 h-100vh w-25vw">
-            <p>workout</p>
+            <p>{title.title}</p>
         </div>
     )
 }
