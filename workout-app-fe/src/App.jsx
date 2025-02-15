@@ -6,12 +6,26 @@ import {useContext} from 'react'
 import { UserContext } from './contexts/userContext.js'
 import { Route, Routes } from 'react-router-dom'
 import Homepage from './Pages/Homepage.jsx'
+import { fetchUserWorkouts } from '../api.js'
 function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState({})
   const [user, setUser] = useState({username:"Sigismund", userId: 1, avatar: SpaceWolvesAvatar, currentWorkout: null })
   const [workouts, setWorkouts] = useState({})
 
+  useEffect(()=>{
+    setIsLoading(true)
+    fetchUserWorkouts(user.userId)
+      .then((res) => {
+        setIsLoading(false)
+        setErrorMessage({})
+        console.log(res.data, "< res.data")
+      })
+      .catch((err) => {
+        setErrorMessage(err.response.data)
+        console.log(err.resonse.data, "< error")
+      })
+  }, [])
 
   
   return (
