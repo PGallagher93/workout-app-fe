@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from "./Components/Header/Header.jsx"
 import './App.css'
 import SpaceWolvesAvatar from "./Avatars/SpaceWolves.jpeg"
@@ -11,6 +11,8 @@ function App() {
   const [errorMessage, setErrorMessage] = useState({})
   const [user, setUser] = useState({username:"Sigismund", userId: 1, avatar: SpaceWolvesAvatar, currentWorkout: null })
   const [workouts, setWorkouts] = useState({})
+
+
   
   return (
     <UserContext.Provider value ={user}>
