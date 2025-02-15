@@ -6,3 +6,5 @@ const MyWorkouts = (workouts) =>{
         </div>
     )
 }
+
+export default MyWorkouts

@@ -6,6 +6,7 @@ import {useContext} from 'react'
 import { UserContext } from './contexts/userContext.js'
 import { Route, Routes } from 'react-router-dom'
 import Homepage from './Pages/Homepage.jsx'
+
 import { fetchUserWorkouts } from '../api.js'
 function App() {
   const [isLoading, setIsLoading] = useState(false)
