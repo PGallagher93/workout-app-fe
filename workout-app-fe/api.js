@@ -8,4 +8,4 @@ const fetchUserWorkouts = (id) =>{
     return axios.get(`https://pg-workout-app.onrender.com/api/workouts/${id}`)
 }
 
-export {fetchPremadeWorkouts}
+export {fetchPremadeWorkouts, fetchUserWorkouts}
