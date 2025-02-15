@@ -6,7 +6,7 @@ import {useContext} from 'react'
 import { UserContext } from './contexts/userContext.js'
 import { Route, Routes } from 'react-router-dom'
 import Homepage from './Pages/Homepage.jsx'
-
+import MyWorkouts from './Pages/MyWorkouts.jsx'
 import { fetchUserWorkouts } from '../api.js'
 function App() {
   const [isLoading, setIsLoading] = useState(false)
@@ -35,6 +35,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
+        <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts}/>}></Route>
       </Routes>
   
     </UserContext.Provider>
