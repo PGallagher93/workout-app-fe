@@ -1,6 +1,8 @@
-const WorkoutCard = ()=>{
+const WorkoutCard = (title)=>{
 return (
-    
+    <div>
+    <p> hehe</p>
+    </div>
 )
 }
 

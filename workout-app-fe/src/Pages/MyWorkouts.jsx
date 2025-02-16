@@ -1,4 +1,4 @@
-import ContainerTile from "../Components/Workout Components/ContainerTile";
+import WorkoutCard from "../Components/Workout Components/WorkoutCard";
 
 const MyWorkouts = ({ workouts }) => {
   console.log(workouts, "In myworkout page");
@@ -8,7 +8,7 @@ const MyWorkouts = ({ workouts }) => {
       <ul className="flex-col ">
         {workouts.map((workout) => {
           return (
-            <ContainerTile
+            <WorkoutCard
               key={workout.workout_id}
               title={workout.workout_name}
             />
