@@ -35,7 +35,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
-        <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts}/>}></Route>
+        <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts} setUser={setUser} />}></Route>
       </Routes>
   
     </UserContext.Provider>
