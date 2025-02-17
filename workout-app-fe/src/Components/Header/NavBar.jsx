@@ -8,9 +8,8 @@ const NavBar = () => {
 
   return (
     <nav className="flex justify-start w-full p-2">
-      <button></button>
-
-      <img
+     
+     <img
         className="w-10 h-10 rounded-full"
         src={user.avatar}
         alt="Rounded avatar"
