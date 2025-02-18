@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { fetchSingleWorkout } from "../../api"
 import { useEffect, useState } from "react"
+import WorkoutStatsContainer from "../Components/Workout Components/WorkoutStatsContainer"
 const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
 
     const {id} = useParams()
@@ -38,7 +39,11 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
             
          <ul>
             {workout.map((stats) => {
-                console.log(stats, "< in thingy")
+                console.log(stats)
+                if(stats.session === session){
+                    console.log(stats, "< in map")
+                    return <WorkoutStatsContainer/>
+                }
             })}
          </ul>
         </div>
