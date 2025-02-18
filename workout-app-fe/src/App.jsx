@@ -37,7 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
         <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts} setUser={setUser} />}></Route>
-        <Route path="/Workout/:id" element={<Workout/>}></Route>
+        <Route path="/Workout/:id" element={<Workout setIsLoading={setIsLoading} setErrorMessage={setErrorMessage}/>}></Route>
       </Routes>
   
     </UserContext.Provider>
