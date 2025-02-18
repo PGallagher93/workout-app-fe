@@ -42,7 +42,7 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
                 console.log(stats)
                 if(stats.session === session){
                     console.log(stats, "< in map")
-                    return <WorkoutStatsContainer/>
+                    return <WorkoutStatsContainer stats={stats}/>
                 }
             })}
          </ul>
