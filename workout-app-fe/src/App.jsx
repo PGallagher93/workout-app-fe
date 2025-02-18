@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom'
 import Homepage from './Pages/Homepage.jsx'
 import MyWorkouts from './Pages/MyWorkouts.jsx'
 import { fetchUserWorkouts } from '../api.js'
+import Workout from './Pages/Workout.jsx'
 function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState({})
@@ -36,6 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
         <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts} setUser={setUser} />}></Route>
+        <Route path="/Workout/:id" element={<Workout/>}></Route>
       </Routes>
   
     </UserContext.Provider>

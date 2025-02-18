@@ -1,6 +1,6 @@
 const Workout = () =>{
     return (
-        <div>
+        <div className="pt-14 bg-zinc-800 h-screen">
 
         </div>
     )
