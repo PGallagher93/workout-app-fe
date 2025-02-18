@@ -13,7 +13,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState({})
   const [user, setUser] = useState({username:"Sigismund", userId: 1, avatar: SpaceWolvesAvatar, currentWorkout: null })
-  const [workouts, setWorkouts] = useState({})
+  const [workouts, setWorkouts] = useState([])
 
   useEffect(()=>{
     setIsLoading(true)
@@ -37,7 +37,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
         <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts} setUser={setUser} />}></Route>
-        <Route path="/Workout/:id" element={<Workout setIsLoading={setIsLoading} setErrorMessage={setErrorMessage}/>}></Route>
+        <Route path="/Workout/:id" element={<Workout setIsLoading={setIsLoading} setErrorMessage={setErrorMessage} isLoading={isLoading}/>}></Route>
       </Routes>
   
     </UserContext.Provider>
