@@ -1,7 +1,7 @@
 import WorkoutCard from "../Components/Workout Components/WorkoutCard";
-
+import { Link } from "react-router-dom";
 const MyWorkouts = ({ workouts, setUser }) => {
-  console.log(setUser, "In myworkout page");
+  
   return (
     <div className="pt-14 bg-zinc-800 h-screen">
       <h1>workouts</h1>
@@ -9,6 +9,7 @@ const MyWorkouts = ({ workouts, setUser }) => {
         {workouts.map((workout) => {
           console.log(workout, "< in myworkout")
           return (
+            <Link to={`/Workout/${workout.workout_id}`} key={workout.workout_id}>
             <WorkoutCard
               key={workout.workout_id}
               title={workout.workout_name}
@@ -16,6 +17,7 @@ const MyWorkouts = ({ workouts, setUser }) => {
               setUser={setUser}
               
             />
+            </Link>
           );
         })}
       </ul>

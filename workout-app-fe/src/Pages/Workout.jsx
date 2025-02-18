@@ -7,6 +7,8 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
     const {id} = useParams()
     const [workout, setWorkout] = useState([])
     const [session, setSession] = useState(1)
+    const [sessionAmount, setSessionAmount] = useState(1)
+    
     console.log(id)
     useEffect(()=> {
         setIsLoading(true)
@@ -15,15 +17,32 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
                 console.log(res.data.workout, "< res in Workout")
                 setIsLoading(false)
                 setWorkout(res.data.workout)
-                console.log(workout, "<use state")
-            })
+                res.data.workout.forEach((stats)=>{
+                    console.log(stats, "< in foreac")
+                    if(stats.session >= sessionAmount){
+                        console.log("its higher")
+                        setSessionAmount(stats.session)
+                    }
+                })
+                })
             .catch((err) => {
                 setErrorMessage(err)
                 console.log(err, "< error in workout component")
             })
 
     }, [])
+    
  console.log(workout, "< out of effect")
+ const handleNextSession = (e) => {
+    setSession(session + 1)
+    console.log("ive been pressed", sessionAmount,"= session amount", session, "= session")
+           if(session < sessionAmount){
+        //    setSession(session+1)
+           console.log(session, "im inside")}
+ }
+ const handlePreviousSession = (e) => {
+    setSession(session - 1)
+ }
 
    if(isLoading) {
     return(
@@ -39,13 +58,21 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
             
          <ul>
             {workout.map((stats) => {
-                console.log(stats)
+                
                 if(stats.session === session){
-                    console.log(stats, "< in map")
-                    return <WorkoutStatsContainer stats={stats}/>
+                   
+                    return <WorkoutStatsContainer key ={stats.stat_id} stats={stats}/>
                 }
             })}
          </ul>
+         {session > 1 ? <button onClick={(e) => {
+            handlePreviousSession(e)
+         }}>Previous Session</button> : <></>}
+         {session < sessionAmount ? <button onClick={(e) =>{
+              handleNextSession(e)
+         }}>Next Session</button> : <></>}
+        
+         
         </div>
     )}
 }
