@@ -9,6 +9,7 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
     const [session, setSession] = useState(1)
     const [sessionAmount, setSessionAmount] = useState(1)
     
+    
     console.log(id)
     useEffect(()=> {
         setIsLoading(true)
