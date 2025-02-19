@@ -14,13 +14,13 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
         setIsLoading(true)
         fetchSingleWorkout(id)
             .then((res)=>{
-                console.log(res.data.workout, "< res in Workout")
+                
                 setIsLoading(false)
                 setWorkout(res.data.workout)
                 res.data.workout.forEach((stats)=>{
-                    console.log(stats, "< in foreac")
+                    
                     if(stats.session >= sessionAmount){
-                        console.log("its higher")
+                        
                         setSessionAmount(stats.session)
                     }
                 })
@@ -32,13 +32,11 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
 
     }, [])
     
- console.log(workout, "< out of effect")
+
  const handleNextSession = (e) => {
     setSession(session + 1)
-    console.log("ive been pressed", sessionAmount,"= session amount", session, "= session")
-           if(session < sessionAmount){
-        //    setSession(session+1)
-           console.log(session, "im inside")}
+    
+          
  }
  const handlePreviousSession = (e) => {
     setSession(session - 1)
