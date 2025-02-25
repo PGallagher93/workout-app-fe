@@ -38,7 +38,7 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
     setSession(session + 1)
     
           
- }
+ }//shouldnt this just be pagination?
  const handlePreviousSession = (e) => {
     setSession(session - 1)
  }
