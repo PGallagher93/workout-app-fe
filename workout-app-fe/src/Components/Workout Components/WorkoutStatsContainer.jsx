@@ -20,7 +20,7 @@ const WorkoutStatsContainer = ({ stats }) => {
  // when posting workout weight update the data will -have- to be an int
   const handleChange=(e)=>{
     
-    setWeightInput(e.target.value)
+    setWeightInput(e.target.value.replace(/[^0-9]/g, ""))
     
     
   }
