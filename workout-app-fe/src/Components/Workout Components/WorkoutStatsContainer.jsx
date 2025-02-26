@@ -10,6 +10,7 @@ const WorkoutStatsContainer = ({ stats }) => {
     setisEditable(true);
   };
   const handleSubmit = (e) => {
+    e.preventDefault()
     setisEditable(false);
   };
   const handleForm = (formData) => {
@@ -52,7 +53,7 @@ const WorkoutStatsContainer = ({ stats }) => {
   
         <form>
             <input name ="weight" type="text" onChange={(e) => {handleChange(e)}} value={weightInput}/>
-            <button type="submit">add weight</button>
+            <button onClick={(e) =>{handleSubmit(e)}}>add weight</button>
         </form>
       </div>
     );
