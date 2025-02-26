@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { patchWorkoutWeightStat } from "../../../api";
 
 const WorkoutStatsContainer = ({ stats }) => {
   console.log(stats, "< stats ");
@@ -6,11 +7,17 @@ const WorkoutStatsContainer = ({ stats }) => {
   const [workoutStats, setWorkoutStats] = useState(stats);
   const [weightInput, setWeightInput] = useState(workoutStats.weight) //can i just change workoutstats state??
   const [weightPosted, setWeightPosted] = useState(false)
+  const [isPosting, setIsPosting] = useState(false)
   const handleEdit = (e) => {
     setisEditable(true);
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = (e, workoutStat_id) => {
     e.preventDefault()
+    console.log(workoutStat_id, "< id",typeof weightInput, "weight input")
+    setWeightPosted(false)
+    if(typeof weightInput !== "string" ) {
+      
+    }
     setisEditable(false);
   };
   const handleForm = (formData) => {
@@ -53,7 +60,7 @@ const WorkoutStatsContainer = ({ stats }) => {
   
         <form>
             <input name ="weight" type="text" onChange={(e) => {handleChange(e)}} value={weightInput}/>
-            <button onClick={(e) =>{handleSubmit(e)}}>add weight</button>
+            <button onClick={(e) =>{handleSubmit(e, workoutStats.stat_id)}}>add weight</button>
         </form>
       </div>
     );
