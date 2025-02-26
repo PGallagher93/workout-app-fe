@@ -5,7 +5,7 @@ const WorkoutStatsContainer = ({ stats }) => {
   const [isEditable, setisEditable] = useState(false);
   const [workoutStats, setWorkoutStats] = useState(stats);
   const [weightInput, setWeightInput] = useState(workoutStats.weight) //can i just change workoutstats state??
-  
+  const [weightPosted, setWeightPosted] = useState(false)
   const handleEdit = (e) => {
     setisEditable(true);
   };
