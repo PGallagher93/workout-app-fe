@@ -15,10 +15,31 @@ const WorkoutStatsContainer = ({ stats }) => {
     e.preventDefault()
     console.log(workoutStat_id, "< id",typeof weightInput, "weight input")
     setWeightPosted(false)
-    if(typeof weightInput !== "string" ) {
-      
+    
+    
+    
+    if(weightInput !== "" ) {
+      const weightInputNumber = Number(weightInput)
+      if(weightInputNumber < 1000){
+      console.log("in posting")
+      setIsPosting(true)
+      patchWorkoutWeightStat(workoutStat_id, weightInputNumber)
+        .then((res)=>{
+          console.log(res.data.workoutStat.weight, "< ress data")
+          const newWeight = res.data.workoutStat.weight
+          setIsPosting(false)
+          setWeightPosted(true)
+          setWorkoutStats({...workoutStats,
+                           weight:newWeight })  
+          setisEditable(false)
+        })
+        .catch((err)=>{
+          //will need to do some validation?? ie for user
+          console.log(err, "< err")
+        })
+      }
     }
-    setisEditable(false);
+    // setisEditable(false);
   };
   const handleForm = (formData) => {
     console.log(formData, "<< form")
