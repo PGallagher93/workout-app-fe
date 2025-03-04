@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { UserContext } from "../../contexts/userContext"
-
+//set current workout in local storagr or cookies?
 const WorkoutCard = ({title, workout, setUser})=>{
 const user = useContext(UserContext)
 console.log(workout, "in card")
