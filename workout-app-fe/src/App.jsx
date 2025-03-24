@@ -2,6 +2,13 @@ import { useState, useEffect } from 'react'
 import Header from "./Components/Header/Header.jsx"
 import './App.css'
 import SpaceWolvesAvatar from "./Avatars/SpaceWolves.jpeg"
+import BloodAngelsAvatar from "./Avatars/BloodAngels.jpeg"
+import DarkAngelsAvatar from "./Avatars/DarkAngels.jpeg"
+import DeathGuardAvatar from "./Avatars/DeathGuard.jpg"
+import IronWarriorsAvatar from "./Avatars/IronWarriors.jpeg"
+import NightLordsAvatar from "./Avatars/NightLords.jpeg"
+import UltramarinesAvatar from "./Avatars/Ultramarines.jpeg"
+import WordBearersAvatar from "./Avatars/WordBearers.jpeg"
 import {useContext} from 'react'
 import { UserContext } from './contexts/userContext.js'
 import { Route, Routes } from 'react-router-dom'
