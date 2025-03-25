@@ -9,6 +9,10 @@ const LoginForm = () => {
     setUsernameInput(e.target.value)
    }
 
+   const handlePasswordChange=(e) => {
+    setPasswordInput(e.target.value)
+   }
+
 
     return(
         <div>
