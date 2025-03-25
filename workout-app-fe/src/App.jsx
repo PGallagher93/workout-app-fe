@@ -4,7 +4,7 @@ import './App.css'
 import SpaceWolvesAvatar from "./Avatars/SpaceWolves.jpeg"
 import BloodAngelsAvatar from "./Avatars/BloodAngels.jpeg"
 import DarkAngelsAvatar from "./Avatars/DarkAngels.jpeg"
-import DeathGuardAvatar from "./Avatars/DeathGuard.jpg"
+import DeathGuardAvatar from "./Avatars/DeathGuard.jpeg"
 import IronWarriorsAvatar from "./Avatars/IronWarriors.jpeg"
 import NightLordsAvatar from "./Avatars/NightLords.jpeg"
 import UltramarinesAvatar from "./Avatars/Ultramarines.jpeg"
