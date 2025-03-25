@@ -16,6 +16,7 @@ import Homepage from './Pages/Homepage.jsx'
 import MyWorkouts from './Pages/MyWorkouts.jsx'
 import { fetchUserWorkouts } from '../api.js'
 import Workout from './Pages/Workout.jsx'
+import Login from './Pages/Login.jsx'
 function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState({})
@@ -45,6 +46,7 @@ function App() {
         <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
         <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts} setUser={setUser} />}></Route>
         <Route path="/Workout/:id" element={<Workout setIsLoading={setIsLoading} setErrorMessage={setErrorMessage} isLoading={isLoading}/>}></Route>
+        <Route path="/login" element={<Login setErrorMessage={setErrorMessage} setUser={setUser}/>}></Route>
       </Routes>
   
     </UserContext.Provider>
