@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { postUserLogin } from "../../../api"
 
-const LoginForm = () => {
-
+const LoginForm = ({setUser, user}) => {
+    
     const [usernameInput, setUsernameInput] = useState("")
     const [passwordInput, setPasswordInput] = useState("")
     const [loginPosted, setLoginPosted] = useState(false)
@@ -20,10 +20,18 @@ const LoginForm = () => {
 
    const handleSubmit = (e) => {
     e.preventDefault()
+    console.log("submit this!")
     setIsPosting(true)
     postUserLogin(usernameInput, passwordInput)
         .then((res)=>{
-            console.log(res.data)
+            console.log(res.data.userDetails)
+            const userDetails = res.data.userDetails
+            setUser({...user,
+                     username:userDetails.displayName,
+                    userId:userDetails.userId,
+                    avatar:userDetails.avatar,
+                    currentWorkout:null})
+            
         })
         .catch((err) => {
             console.log(err, "< error")
@@ -37,7 +45,7 @@ const LoginForm = () => {
                 <input name="username" type="text" onChange={(e)=>{handleUsernameChange(e)}}></input>
                 <br/>
                 <input name="password" type="password" onChange={(e)=>{handlePasswordChange(e)}}></input>
-                <button>Login</button>
+                <button onClick={(e)=> {handleSubmit(e)}}>Login</button>
             </form>
         </div>
     )
