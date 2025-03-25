@@ -5,6 +5,11 @@ const LoginForm = () => {
     const [usernameInput, setUsernameInput] = useState("")
     const [passwordInput, setPasswordInput] = useState("")
 
+   const handleUsernameChange=(e) => {
+    setUsernameInput(e.target.value)
+   }
+
+
     return(
         <div>
             <form>
