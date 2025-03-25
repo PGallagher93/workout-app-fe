@@ -17,9 +17,9 @@ const LoginForm = () => {
     return(
         <div>
             <form>
-                <input name="username" type="text"></input>
+                <input name="username" type="text" onChange={(e)=>{handleUsernameChange(e)}}></input>
                 <br/>
-                <input name="password" type="password"></input>
+                <input name="password" type="password" onChange={(e)=>{handlePasswordChange(e)}}></input>
                 <button>Login</button>
             </form>
         </div>
