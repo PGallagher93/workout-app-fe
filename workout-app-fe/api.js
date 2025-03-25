@@ -17,4 +17,9 @@ const patchWorkoutWeightStat = (stat_id, weight) =>{
     {stat_id: stat_id, weight: weight})
 }
 
-export {fetchPremadeWorkouts, fetchUserWorkouts, fetchSingleWorkout, patchWorkoutWeightStat}
+const postUserLogin = (username, password) => {
+    return axios.post(`https://pg-workout-app.onrender.com/api/user/login`,
+    {username:username, password:password})
+}
+
+export {fetchPremadeWorkouts, fetchUserWorkouts, fetchSingleWorkout, patchWorkoutWeightStat, postUserLogin}

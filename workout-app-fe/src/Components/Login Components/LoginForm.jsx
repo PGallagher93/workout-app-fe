@@ -7,10 +7,12 @@ const LoginForm = () => {
 
    const handleUsernameChange=(e) => {
     setUsernameInput(e.target.value)
+    console.log(usernameInput)
    }
 
    const handlePasswordChange=(e) => {
     setPasswordInput(e.target.value)
+    console.log(passwordInput)
    }
 
 
