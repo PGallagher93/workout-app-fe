@@ -3,6 +3,7 @@ import { useState } from "react"
 const LoginForm = () => {
 
     const [usernameInput, setUsernameInput] = useState("")
+    const [passwordInput, setPasswordInput] = useState("")
 
     return(
         <div>
