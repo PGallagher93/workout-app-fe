@@ -25,9 +25,11 @@ function App() {
 
   useEffect(()=>{
     setIsLoading(true)
+    console.log(isLoading, "< loading first")
     fetchUserWorkouts(user.userId)
       .then((res) => {
         setIsLoading(false)
+        console.log(isLoading, "< loading 2nd")
         setErrorMessage({})
         setWorkouts(res.data.workouts)
       })
@@ -44,7 +46,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<Homepage workouts={workouts}/>}></Route>
-        <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts} setUser={setUser} />}></Route>
+        <Route path="/MyWorkouts" element={<MyWorkouts workouts={workouts} setUser={setUser} isLoading={isLoading}/>}></Route>
         <Route path="/Workout/:id" element={<Workout setIsLoading={setIsLoading} setErrorMessage={setErrorMessage} isLoading={isLoading}/>}></Route>
         <Route path="/login" element={<Login setErrorMessage={setErrorMessage} setUser={setUser} user={user} />}></Route>
       </Routes>
