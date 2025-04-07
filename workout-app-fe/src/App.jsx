@@ -28,7 +28,7 @@ function App() {
     console.log(isLoading, "< loading first")
     fetchUserWorkouts(user.userId)
       .then((res) => {
-        setIsLoading(true)
+        setIsLoading(false)
         console.log(isLoading, "< loading 2nd")
         setErrorMessage({})
         setWorkouts(res.data.workouts)
