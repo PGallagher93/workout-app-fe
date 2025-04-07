@@ -1,4 +1,4 @@
-import LoadingContainer from "../../loading Components/LoadingContainer";
+import LoadingContainer from "../Components/loading Components/LoadingContainer";
 import WorkoutCard from "../Components/Workout Components/WorkoutCard";
 import { Link } from "react-router-dom";
 const MyWorkouts = ({ workouts, setUser, isLoading }) => {
