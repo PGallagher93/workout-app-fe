@@ -26,6 +26,10 @@ const LoginForm = ({setUser, user}) => {
         .then((res)=>{
             console.log(res.data.userDetails)
             const userDetails = res.data.userDetails
+            localStorage.setItem("displayName", userDetails.displayName)
+            localStorage.setItem("userId", userDetails.userId)
+            localStorage.setItem("avatar", userDetails.avatar)
+            localStorage.setItem("currentWorkout", null)
             setUser({...user,
                      username:userDetails.displayName,
                     userId:userDetails.userId,
@@ -38,6 +42,8 @@ const LoginForm = ({setUser, user}) => {
         })
 
    }
+
+   //for login form, at bottom need a "need to sign up?" link etc to the register page
 
     return(
         <div>

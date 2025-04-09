@@ -5,6 +5,7 @@ const fetchPremadeWorkouts = () => {
 }
 
 const fetchUserWorkouts = (id) =>{
+    console.log(id, "axios id")
     return axios.get(`https://pg-workout-app.onrender.com/api/workouts/${id}`)
 }
 
