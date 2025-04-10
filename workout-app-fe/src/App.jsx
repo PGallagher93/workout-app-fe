@@ -32,11 +32,11 @@ function App() {
     });
     console.log(user.userId, "< userID");
   }, []);
-
+ // might need to add the lower useeffect to another component so it doesnt get a bad request on every render
   useEffect(() => {
     setIsLoading(true);
     console.log(isLoading, "< loading first");
-
+    if(user.userId){
     fetchUserWorkouts(user.userId)
       .then((res) => {
         setIsLoading(false);
@@ -47,7 +47,7 @@ function App() {
       .catch((err) => {
         setErrorMessage(err);
         console.log(err, "< error");
-      });
+      });}
   }, [user]);
   console.log(workouts, "in app");
 

@@ -60,6 +60,7 @@ const WorkoutStatsContainer = ({ stats }) => {
         <span>Reps: {workoutStats.reps}</span>
         <span>sets: {workoutStats.sets}</span>
         <span>Weight: {workoutStats.weight}</span>
+        <div className="bg-black text-white ">
         <button
           onClick={(e) => {
             handleEdit(e);
@@ -67,6 +68,7 @@ const WorkoutStatsContainer = ({ stats }) => {
         >
           Edit
         </button>
+        </div>
       </div>
     );
   }
