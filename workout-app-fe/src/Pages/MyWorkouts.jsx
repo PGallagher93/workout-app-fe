@@ -8,8 +8,9 @@ const MyWorkouts = ({ workouts, setUser, isLoading }) => {
     )
   }
   return (
-    <div className="pt-14 bg-zinc-800 h-screen">
-      <h1>workouts</h1>
+    //create a div component to avoid repeating
+    <div className="pt-14 bg-black h-screen">
+      <h1 className="text-white">workouts</h1>
       <ul className="flex-col ">
         {workouts.map((workout) => {
           console.log(workout, "< in myworkout")

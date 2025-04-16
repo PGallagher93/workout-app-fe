@@ -53,7 +53,7 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
 
     else if (workout) {
         return (
-        <div className="pt-14 bg-zinc-800 h-screen">
+        <div className="pt-14 bg-black text-white h-screen">
             
          <ul>
             {workout.map((stats) => {
