@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { fetchSingleWorkout } from "../../api"
 import { useEffect, useState } from "react"
+import PageContainer from "../Components/Basic Components/PageContainer"
 import WorkoutStatsContainer from "../Components/Workout Components/WorkoutStatsContainer"
 const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
 
@@ -53,7 +54,7 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
 
     else if (workout) {
         return (
-        <div className="pt-14 bg-black text-white h-screen">
+        <PageContainer>
             
          <ul>
             {workout.map((stats) => {
@@ -72,7 +73,7 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
          }}>Next Session</button> : <></>}
         
          
-        </div>
+        </PageContainer>
     )}
 }
 

@@ -15,7 +15,7 @@ const NavBar = () => {
         alt="Rounded avatar"
       ></img>
 
-      <h1 className="text-orange-400 pl-[5vw] pt-[1vh]"> {user.username}</h1>
+      <h1 className="text-orange-400 font-bold pl-[5vw] pt-[1vh]"> {user.username}</h1>
     </nav>
   );
 };

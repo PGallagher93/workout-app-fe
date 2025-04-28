@@ -32,26 +32,28 @@ function App() {
     });
     console.log(user.userId, "< userID");
   }, []);
- // might need to add the lower useeffect to another component so it doesnt get a bad request on every render
+  // might need to add the lower useeffect to another component so it doesnt get a bad request on every render
   useEffect(() => {
     setIsLoading(true);
     console.log(isLoading, "< loading first");
-    if(user.userId){
-    fetchUserWorkouts(user.userId)
-      .then((res) => {
-        setIsLoading(false);
-        console.log(isLoading, "< loading 2nd");
-        setErrorMessage({});
-        setWorkouts(res.data.workouts);
-      })
-      .catch((err) => {
-        setErrorMessage(err);
-        console.log(err, "< error");
-      });}
+    if (user.userId) {
+      fetchUserWorkouts(user.userId)
+        .then((res) => {
+          setIsLoading(false);
+          console.log(isLoading, "< loading 2nd");
+          setErrorMessage({});
+          setWorkouts(res.data.workouts);
+        })
+        .catch((err) => {
+          setErrorMessage(err);
+          console.log(err, "< error");
+        });
+    }
   }, [user]);
   console.log(workouts, "in app");
 
   return (
+    //maybe put sign in in header as a hero section?
     <UserContext.Provider value={user}>
       <Header />
       <Routes>

@@ -2,12 +2,13 @@ import ContainerTile from "../Components/Workout Components/ContainerTile";
 import { UserContext } from "../contexts/userContext";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import PageContainer from "../Components/Basic Components/PageContainer";
 const Homepage = (workouts) => {
   const user = useContext(UserContext);
   console.log(user, " homepage user")
   console.log(workouts, " workout in home");
   return (
-    <div className="pt-14 bg-zinc-800 h-screen">
+    <PageContainer>
       <div className=" p-10 flex-col justify-between">
         <Link to={user.currentWorkout ? "/CurrentWorkout" : "/MyWorkouts"}>
           <ContainerTile
@@ -22,7 +23,7 @@ const Homepage = (workouts) => {
         <ContainerTile title="My Records" />
         <ContainerTile title="Create Workout" />
       </div>
-    </div>
+    </PageContainer>
   );
 };
 
