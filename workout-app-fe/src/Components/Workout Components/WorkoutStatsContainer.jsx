@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { patchWorkoutWeightStat } from "../../../api";
-import statsBackgroundImage from "../../Images/statsBackgroundImage.jpg"
+import statsBackgroundImage from "../../images/statsBackgroundImage.jpg"
 
 const WorkoutStatsContainer = ({ stats }) => {
   console.log(stats, "< stats ");
@@ -56,7 +56,8 @@ const WorkoutStatsContainer = ({ stats }) => {
   }
   if (!isEditable) {
     return (
-      <div className="bg-orange-400 min-h-20 w-25vw p-1 rounded-sm my-12 flex flex-col ">
+      <div className="bg-[url('./images/statsBackgroundImage.jpg')] bg-cover bg-center min-h-20 w-25vw  rounded-sm my-12  ">
+        <div className=" bg-black/50 flex flex-col backdrop-opacity-50 p-1">
         <span>Exercise: {workoutStats.exercise_name}</span>
         <span>Reps: {workoutStats.reps}</span>
         <span>sets: {workoutStats.sets}</span>
@@ -69,6 +70,7 @@ const WorkoutStatsContainer = ({ stats }) => {
         >
           Edit
         </button>
+        </div>
         </div>
       </div>
     );
