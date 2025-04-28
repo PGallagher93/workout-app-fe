@@ -55,6 +55,15 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
     else if (workout) {
         return (
         <PageContainer>
+             <div className="flex  ">
+         {session > 1 ? <button className="text-5xl cursor-pointer" onClick={(e) => {
+            handlePreviousSession(e)
+         }}>&lt;</button> : <button className="text-5xl text-black  text-end ">&gt;</button>}
+         <span className="text-center flex-1 mt-5">Session: {session}</span>
+         {session < sessionAmount ? <button className="text-5xl cursor-pointer text-end" onClick={(e) =>{
+              handleNextSession(e)
+         }}>&gt;</button> : <button className="text-5xl text-black  text-end ">&gt;</button>}
+         </div>
             
          <ul>
             {workout.map((stats) => {
@@ -65,15 +74,7 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
                 }
             })}
          </ul>
-         <div className="flex pb-10 ">
-         {session > 1 ? <button className="text-5xl cursor-pointer" onClick={(e) => {
-            handlePreviousSession(e)
-         }}>&lt;</button> : <button className="text-5xl text-black  text-end ">&gt;</button>}
-         <span className="text-center flex-1">Session: {session}</span>
-         {session < sessionAmount ? <button className="text-5xl cursor-pointer text-end" onClick={(e) =>{
-              handleNextSession(e)
-         }}>&gt;</button> : <button className="text-5xl text-black  text-end ">&gt;</button>}
-         </div>
+        
         
          
         </PageContainer>
