@@ -65,12 +65,15 @@ const Workout = ({setIsLoading, setErrorMessage, isLoading}) =>{
                 }
             })}
          </ul>
-         {session > 1 ? <button onClick={(e) => {
+         <div className="flex pb-10 ">
+         {session > 1 ? <button className="text-5xl cursor-pointer" onClick={(e) => {
             handlePreviousSession(e)
-         }}>Previous Session</button> : <></>}
-         {session < sessionAmount ? <button onClick={(e) =>{
+         }}>&lt;</button> : <button className="text-5xl text-black  text-end ">&gt;</button>}
+         <span className="text-center flex-1">Session: {session}</span>
+         {session < sessionAmount ? <button className="text-5xl cursor-pointer text-end" onClick={(e) =>{
               handleNextSession(e)
-         }}>Next Session</button> : <></>}
+         }}>&gt;</button> : <button className="text-5xl text-black  text-end ">&gt;</button>}
+         </div>
         
          
         </PageContainer>
