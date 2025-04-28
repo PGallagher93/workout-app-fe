@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { patchWorkoutWeightStat } from "../../../api";
-import 
+import statsBackgroundImage from "../../Images/statsBackgroundImage.jpg"
 
 const WorkoutStatsContainer = ({ stats }) => {
   console.log(stats, "< stats ");
