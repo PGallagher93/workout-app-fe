@@ -1,10 +1,11 @@
 const ContainerTile = (title) => {
-    
-    return (
-        <div className="bg-orange-400 min-h-20 w-25vw p-1 rounded-sm my-10">
-            <p>{title.title}</p>
-        </div>
-    )
-}
+  return (
+    <section className="min-w-[100%] md:min-w-[40%]">
+      <article className="bg-[url('./images/statsBackgroundImage.jpg')] h-60 w-[60%] snap-center rounded-xl  bg-cover bg-center   text-center ">
+        <p>{title.title}</p>
+      </article>
+    </section>
+  );
+};
 
-export default ContainerTile
+export default ContainerTile;
