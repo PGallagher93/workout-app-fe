@@ -56,8 +56,8 @@ const WorkoutStatsContainer = ({ stats }) => {
   }
   if (!isEditable) {
     return (
-      <div className="bg-[url('./images/statsBackgroundImage.jpg')] bg-cover bg-center min-h-20 w-25vw  rounded-sm my-12  ">
-        <div className=" bg-black/50 flex flex-col backdrop-opacity-50 p-1">
+      <article className="bg-[url('./images/statsBackgroundImage.jpg')] bg-cover bg-center min-h-20 w-25vw  rounded-sm my-12  ">
+        <section className=" bg-black/50  font-bold flex flex-col backdrop-opacity-50 p-1">
         <span>Exercise: {workoutStats.exercise_name}</span>
         <span>Reps: {workoutStats.reps}</span>
         <span>sets: {workoutStats.sets}</span>
@@ -71,15 +71,15 @@ const WorkoutStatsContainer = ({ stats }) => {
           Edit
         </button>
         </div>
-        </div>
-      </div>
+        </section>
+      </article>
     );
   }
 
   if (isEditable) {
     return (
-      <div className="bg-[url('./images/statsBackgroundImage.jpg')] bg-cover bg-center min-h-20 w-25vw  rounded-sm my-12 ">
-        <div className=" bg-black/50 flex flex-col backdrop-opacity-50 p-1">
+      <article className="bg-[url('./images/statsBackgroundImage.jpg')] bg-cover  bg-center min-h-20 w-25vw  rounded-sm my-12 ">
+        <section className="  font-bold bg-black/50 flex flex-col backdrop-opacity-50 p-1 ">
         <span>Exercise: {workoutStats.exercise_name}</span>
         <span>Reps: {workoutStats.reps}</span>
         <span>sets: {workoutStats.sets}</span>
@@ -89,8 +89,8 @@ const WorkoutStatsContainer = ({ stats }) => {
             <input className="bg-black" name ="weight" type="text" onChange={(e) => {handleChange(e)}} value={weightInput}/>
             <button onClick={(e) =>{handleSubmit(e, workoutStats.stat_id)}}>add weight</button>
         </form>
-        </div>
-      </div>
+        </section>
+      </article>
     );
   }
 };
