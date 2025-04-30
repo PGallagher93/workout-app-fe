@@ -6,22 +6,20 @@ import PageContainer from "../Components/Basic Components/PageContainer";
 import Carousel from "../Components/Homepage Components/Carousel";
 const Homepage = (workouts) => {
   const user = useContext(UserContext);
-  console.log(user, " homepage user")
+  console.log(user, " homepage user");
   console.log(workouts, " workout in home");
   return (
     <PageContainer>
-
       <Carousel>
-      
-          <ContainerTile
-            title={
-              user.currentWorkout ? "Current Workout" : "Add Current Workout"
-            }
-          />
-        
-        
-          <ContainerTile title="My Workouts" link ={"/MyWorkouts"}/>
-        
+        <ContainerTile
+          title={
+            user.currentWorkout ? "Current Workout" : "Add Current Workout"
+          }
+          link={user.currentWorkout ? "/CurrentWorkout" : "/MyWorkouts"}
+        />
+
+        <ContainerTile title="My Workouts" link={"/MyWorkouts"} />
+
         <ContainerTile title="My Records" />
         <ContainerTile title="Create Workout" />
       </Carousel>
