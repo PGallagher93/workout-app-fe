@@ -20,7 +20,7 @@ const Homepage = (workouts) => {
           />
         
         
-          <ContainerTile title="My Workouts" />
+          <ContainerTile title="My Workouts" link ={"/MyWorkouts"}/>
         
         <ContainerTile title="My Records" />
         <ContainerTile title="Create Workout" />
