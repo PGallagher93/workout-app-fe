@@ -22,7 +22,7 @@ function App() {
   const [errorMessage, setErrorMessage] = useState({});
   const [user, setUser] = useState({});
   const [workouts, setWorkouts] = useState([]);
-
+//set user as this use effects condition so it doesnt keep resetting, but will still reset on a reload?
   useEffect(() => {
     setUser({
       ...user,
@@ -37,11 +37,13 @@ function App() {
     setIsLoading(true);
     console.log(isLoading, "< loading first");
     if (user.userId) {
+      console.log(user.userId, "user id in fetch")
       fetchUserWorkouts(user.userId)
         .then((res) => {
           setIsLoading(false);
           console.log(isLoading, "< loading 2nd");
           setErrorMessage({});
+          console.log(res.data.workouts, "< res.data.workout")
           setWorkouts(res.data.workouts);
         })
         .catch((err) => {
@@ -54,18 +56,24 @@ function App() {
 
   return (
     //maybe put sign in in header as a hero section?
+    
     <UserContext.Provider value={user}>
       <Header />
       <Routes>
         <Route path="/" element={<Homepage workouts={workouts} />}></Route>
         <Route
           path="/MyWorkouts"
-          element={
+          //potential way to ensure login
+          element={user.username ?
             <MyWorkouts
               workouts={workouts}
               setUser={setUser}
               isLoading={isLoading}
-            />
+            /> : <Login
+            setErrorMessage={setErrorMessage}
+            setUser={setUser}
+            user={user}
+          />
           }
         ></Route>
         <Route
